@@ -1,0 +1,39 @@
+#include "LinkedList.h"
+#include <string>
+
+class UnorderedMap {
+    private:
+        class Iterator {
+            Iterator();
+            std::pair<string, string> operator*() const;
+            Iterator& operator++();
+            bool operator!=(Iterator const& rhs);
+            Iterator& operator=(Iterator const& rhs);
+            bool operator==(Iterator const& rhs);
+        }
+        //Vector structure
+        //Separate Chaining Collision Resolution
+        //Each element will contain a pair of string IDs and char* arrays (names)
+        std::vector<LinkedList<char*>> umap;
+        double loadFactor;
+        int size;
+        int capacity;
+    public:
+        UnorderedMap(unsigned int bucketCount, double loadFactor) {
+            capacity = bucketCount;
+            umap.resize(capacity);
+            size = 0;
+            this->loadFactor = loadFactor;
+        }
+
+        unsigned int hashFunction(char const* key, int table_size);
+        Iterator begin() const;
+        Iterator end() const;
+        std::string& operator[](std::string const& key);
+        void rehash();
+        void remove(std::string const& key);
+        unsigned int size();
+        double loadFactor();
+};
+
+UnorderedMap::

@@ -1,0 +1,34 @@
+#include "Project1.cpp"
+#include <vector>
+#include <string>
+#include <iostream>
+#include <queue>
+#include <iostream>
+#include <algorithm>
+#include <sstream>
+using namespace std;
+
+class OrderedMap {
+    private:
+       Tree map;
+    public:
+       OrderedMap() {
+           map = Tree();
+       }
+
+       bool insert(const string ID, const string name) {
+            map.insert()
+       }
+
+       string search(const string ID) {
+
+       }
+       
+       string traverse() {
+
+       }
+
+       bool remove(const string ID) {
+
+       }
+};
